@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Latest</title>
+    <link rel="stylesheet" th:href="@{/Style.css}">
+    <link rel="stylesheet"
+          href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/default.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+<header>
+    <nav>
+        <ul class="nav_links">
+            <li><a href="/code/new"> New Code </a></li>
+            <li><a href="/code/secretcode"> Secret Code </a></li>
+        </ul>
+    </nav>
+    <a href="/code/contact" class="contact">
+        <button>Contact</button>
+    </a>
+</header>
+<div id="intro">
+    <h1>Code sharing platform</h1>
+    <p id="description"> Recently loaded snippets  </p>
+</div>
+<div id="code_block" th:each="codes: ${codes}">
+    <span id="load_date" th:utext="${codes.getDateAsString()}">...</span>
+    <pre id="code_snippet">
+       <code th:utext="${codes.code}">...
+       </code>
+    </pre>
+</div>
+</body>
+</html>

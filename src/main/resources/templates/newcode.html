@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create</title>
+    <link rel="stylesheet" th:href="@{/Style.css}">
+    <script src="/Script.js"></script>
+</head>
+<body>
+<header>
+    <nav>
+        <ul class="nav_links">
+            <li><a href="http://localhost:8889/code/latest"> Latest Codes </a></li>
+            <li><a href="http://localhost:8889/code/secretcode"> Secret Code </a></li>
+        </ul>
+    </nav>
+    <a href="/code/contact" class="contact">
+        <button>Contact</button>
+    </a>
+</header>
+<div id="intro">
+    <h1>Code sharing platform</h1>
+    <p id="description"> A modern platform for uploading and sharing code for people around the world </p>
+</div>
+<div id="code_block">
+    <textarea id="code_snippet"> Paste your code here. This is a sample. Please do not upload text longer than 255 characters </textarea>
+    <form id="code_form" action="[value]" method="post">
+        <p id="time">Time: If you want to set limits in seconds</p>
+        <input id="time_restriction" type="number" name="firstName">
+        <p id="views">Views: If you want to set limits on the number of views</p>
+        <input id="views_restriction" type="number" name="lastName">
+    </form>
+    <br>
+    <button id="send_snippet" type="submit" onclick="send()">Submit</button>
+</div>
+<div id="conclusion">
+    <p> Please note. If you set a time or view limit, your code will not appear in the public domain. It will be
+        available only via a direct link or via the Secret Code menu </p>
+</div>
+</body>
+</html>
